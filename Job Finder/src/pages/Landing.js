@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import main from '../assets/images/main.svg';
 import Wrapper from '../assets/wrappers/LandingPage';
 import {Logo} from '../components';
+
 const Landing = () => {
   return (
    <Wrapper>
@@ -18,7 +20,7 @@ const Landing = () => {
             Flannel trust fund gentrify lo-fi. Master cleanse
              humblebrag salvia farm-to-table, tattooed YOLO
           </p>
-          <button className='btn btn-hero' >Login/Register</button>
+          <Link to='/register' className='btn btn-hero' >Login/Register</Link>
         </div>
         <img src ={main} alt='Job find' className='img main-img'/>
 
