@@ -4,6 +4,7 @@ import customFetch from "../../utils/axios";
 import { addUserToLocalStorage,removeUserFromLocalStorage, getUserFromLocalStorage } from "../../utils/localStorage";
 const initialState={
     isLoading:false,
+    isSidebarOpen:false,
     user:getUserFromLocalStorage,addUserToLocalStorage,removeUserFromLocalStorage
    
 }
@@ -32,6 +33,20 @@ async(user,thunkAPI)=>{
 const userSlice= createSlice({
     name:'user',
     initialState,
+    reducers:{
+        toggleSidebar:(state)=>{
+            state.isSidebarOpen=!state.isSidebarOpen;
+         
+        },
+        logoutUser:(state)=>{
+state.isSidebarOpen=false
+state.user=null
+removeUserFromLocalStorage()
+
+     
+        },
+    },
+
     extraReducers:{
         [registerUser.pending]:(state)=>{
             state.isLoading=true
@@ -65,4 +80,5 @@ const userSlice= createSlice({
         },
     }
 })
+export const {toggleSidebar,logoutUser} = userSlice.actions
 export default userSlice.reducer;

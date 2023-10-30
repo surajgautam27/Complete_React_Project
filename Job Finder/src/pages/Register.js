@@ -45,10 +45,11 @@ const Register = () => {
   useEffect(()=>{
 if(user){
   setTimeout(() => {
-    navigate('/')
+    console.log('Navigated')
+   navigate('/')
   },2000);
 }
-  },[user])
+  },[navigate, user])
   return (
     <Wrapper className='full-page'>
       <form className='form' onSubmit={onSubmit}>
