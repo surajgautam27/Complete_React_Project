@@ -43,7 +43,7 @@ const Register = () => {
     setValues({...values,isMember:!values.isMember})
   }
   useEffect(()=>{
-if(user){
+if(user!=null){
   setTimeout(() => {
     console.log('Navigated')
    navigate('/')

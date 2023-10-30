@@ -5,14 +5,17 @@ import { addUserToLocalStorage,removeUserFromLocalStorage, getUserFromLocalStora
 const initialState={
     isLoading:false,
     isSidebarOpen:false,
-    user:getUserFromLocalStorage,addUserToLocalStorage,removeUserFromLocalStorage
+    // user:null,
+     user:getUserFromLocalStorage
    
 }
 export const registerUser= createAsyncThunk('user/registerUser',
 async(user,thunkAPI)=>{
     try{
+       
         const resp = await customFetch.post('/auth/register',user)
-     return resp.data
+        return resp.data
+      
     }
     catch(error)
     {
