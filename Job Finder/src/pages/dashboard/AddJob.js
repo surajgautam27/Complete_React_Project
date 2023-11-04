@@ -66,21 +66,21 @@ useEffect(()=>{
         <h3>{isEditing ? 'edit job' : 'add job'}</h3>
 
         <div className='form-center'>
-          {/* position */}
+          
           <FormRow
             type='text'
             name='position'
             value={position}
             handleChange={handleJobInput}
           />
-          {/* company */}
+          
           <FormRow
             type='text'
             name='company'
             value={company}
             handleChange={handleJobInput}
           />
-          {/* location */}
+         
           <FormRow
             type='text'
             labelText='job location'
@@ -88,7 +88,7 @@ useEffect(()=>{
             value={jobLocation}
             handleChange={handleJobInput}
           />
-          {/* job status */}
+         
           <FormRowSelect
          name='status'
          labelText='Status'
@@ -96,7 +96,7 @@ useEffect(()=>{
          handleChange={handleJobInput}
          list={statusOptions}/>
 
-          {/* job type */}
+        
           <FormRowSelect 
           name='jobType'
           labelText='job Type'
